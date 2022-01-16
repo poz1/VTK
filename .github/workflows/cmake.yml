@@ -28,4 +28,4 @@ jobs:
       run: | 
         mkdir -p ${{github.workspace}}/build
         cd ${{github.workspace}}/build
-        cmake -DBUILD_SHARED_LIBS=ON .
+        cmake -DBUILD_SHARED_LIBS=ON ./..
