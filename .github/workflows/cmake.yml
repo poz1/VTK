@@ -34,7 +34,7 @@ jobs:
         mkdir -p ${{github.workspace}}/build
         mkdir -p ${{github.workspace}}/build/out
         cd ${{github.workspace}}/build
-        cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_CXX_MP_FLAG=ON -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/build/out ./..
+        cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_CXX_MP_FLAG=ON -DVTK_MODULE_ENABLE_VTK_vtkDICOM:STRING=WANT -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/build/out ./..
         msbuild INSTALL.vcxproj -t:Build -p:Configuration=Release -p:Platform=x64
 
     - uses: actions/upload-artifact@v2
