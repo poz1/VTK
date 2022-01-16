@@ -28,4 +28,5 @@ jobs:
       run: | 
         mkdir -p ${{github.workspace}}/build
         cd ${{github.workspace}}/build
-        cmake -DBUILD_SHARED_LIBS=ON ./..
+        cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_CXX_MP_FLAG=ON -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/build/out ./..
+        ls -recurse
